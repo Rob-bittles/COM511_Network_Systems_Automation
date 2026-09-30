@@ -3,7 +3,8 @@
 # Session 1
 
 ## Topics covered
-*What topics were covered in this session*
+how to set up git hub SSH keys
+how to set up a vagrant VM using Gitbash and Rocky Linux 9.6
 
 
 
