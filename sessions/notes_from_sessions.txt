@@ -1,0 +1,19 @@
+Session 1
+
+Vagrant is an open source tool made by HashiCorp - allows for easier creation, managing portable, reproducible development environments using VMs - it works very similar to docker compose.
+
+vagrant can work with Docker Compose as well as other tools like, VMware, KVM - virtual box is the most sensible - all the documentation is written for Virtual Box.
+
+When creating a VM we need to ensure that there is a vagrant file, this can be created using this command - vagrant init bento/rockylinux-9.6 -- box version 202510.26.0 
+	of course the type of Linux etc will change depending on the OS your using
+
+commonly used commands
+
+vagrant up - starts the VM
+vagrant ssh - allows a login into the VM
+ls /vagrant - allows for the vagrant file to be located and for commands to be inputted into that file
+exit - will leave the shell
+vagrant box list - lists all of the boxes in the system
+vagrant halt - this shutdowns the virtual machine
+vagrant suspend - this hibernates the machine
+vagrant destroy - destroys the VM
