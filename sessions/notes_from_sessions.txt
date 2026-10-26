@@ -17,3 +17,14 @@ vagrant box list - lists all of the boxes in the system
 vagrant halt - this shutdowns the virtual machine
 vagrant suspend - this hibernates the machine
 vagrant destroy - destroys the VM
+
+setting up apache inside an ubuntu vm - and altering the necessary commands inside the VM file
+the lines that need to be uncommeted in the Vagrantfile are
+config.vm.provision "shell", inline: <<SHELL
+	apt-get update
+	apt-get instally -y apache2
+SHELL
+
+tells the VM we spin up to install apache and load it we can check its running with 
+vagrant ssh
+ssytemctl status apache2 - if its running itll say active(running) in green
