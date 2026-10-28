@@ -28,3 +28,23 @@ SHELL
 tells the VM we spin up to install apache and load it we can check its running with 
 vagrant ssh
 ssytemctl status apache2 - if its running itll say active(running) in green
+
+session 3
+
+dnsmasq is a lightweight, easily configurable DNS forwarder, caching DNS server, and DHCP/TFTP - it is designed for LANs
+
+we install ansible_controler to act as the DHCP server for the other VMs on the dhcp_network
+
+learning about how dnsmasq and DHCP works
+showing us the commands to spin it up on the VMs as well as altering the DHCP and DNS commands, and allowing the alternation of the dnsmasq configuration
+
+showing the commands to check the that dnsmasq is actually running
+	sudo systemctl status dnsmasq
+
+also learning commands to check the dnsmasq configuration while being in a terminal
+	sudo cat '/etc/dnsmasq.conf'
+
+and the commands to launch the dnsmasq from the ansible controller
+	sudo su ansible
+	cd /vagrant/ansible/project-ansible/3-1
+	ansible-playbook -i inventory/dev/hosts.ini setup-dnsmasq-server.yml
