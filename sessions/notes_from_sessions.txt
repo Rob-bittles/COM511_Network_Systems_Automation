@@ -48,3 +48,14 @@ and the commands to launch the dnsmasq from the ansible controller
 	sudo su ansible
 	cd /vagrant/ansible/project-ansible/3-1
 	ansible-playbook -i inventory/dev/hosts.ini setup-dnsmasq-server.yml
+
+
+session 5
+
+learning how to create and run websites using Docker on an ubunutu 22.04
+
+shows the commands for running apache inside of a docker container 
+
+docker build -t my-apache (this builds the apache for the webpage inside of docker)
+
+ducker run -d -p 8081:80 --name apache-1 my-apache -- commands that runs the apache file that was created earlier and gives a port forwarding for us to be able to check that it exists and is accessible is possible)
