@@ -29,6 +29,7 @@ tells the VM we spin up to install apache and load it we can check its running w
 vagrant ssh
 ssytemctl status apache2 - if its running itll say active(running) in green
 
+
 session 3
 
 dnsmasq is a lightweight, easily configurable DNS forwarder, caching DNS server, and DHCP/TFTP - it is designed for LANs
@@ -59,3 +60,19 @@ shows the commands for running apache inside of a docker container
 docker build -t my-apache (this builds the apache for the webpage inside of docker)
 
 ducker run -d -p 8081:80 --name apache-1 my-apache -- commands that runs the apache file that was created earlier and gives a port forwarding for us to be able to check that it exists and is accessible is possible)
+
+
+session 7
+
+OpenNMS is the worlds first enterprise and service provider grade service platform that was created using the open source model. It was first published over 20 years ago. It is used for the following purposes
+- service providers 
+- large enterprises - primary network monitoring platform
+- small enterprises - reduces IT teams overhead - allows effective monitoring of networks and services
+- OEM Vendors - package OpenNMS as an IP mediation layer within their own Network or Element management solution set
+Researches and Educators - use OpenNMS for researching or teaching topics In Service Assurance for next generation works.
+
+there is the Meridian and Horizon distributions of OpenNMS
+
+horizon - cutting edge, fast moving distribution of OpenNMS - a new version is released every 3 - 6 months - contains latest tools but no guarantee of backwards compatibility
+
+meridian - hardened long term support version of OpenNMS - a new release annually. Each release is supported for three years post release for bug fixes and security patches. They don't require updating over the 3 year lifespan - more suitable for a production environment  
