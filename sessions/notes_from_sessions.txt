@@ -4,7 +4,7 @@ Vagrant is an open source tool made by HashiCorp - allows for easier creation, m
 
 vagrant can work with Docker Compose as well as other tools like, VMware, KVM - virtual box is the most sensible - all the documentation is written for Virtual Box.
 
-When creating a VM we need to ensure that there is a vagrant file, this can be created using this command - vagrant init bento/rockylinux-9.6 -- box version 202510.26.0 
+When creating a VM we need to ensure that there is a vagrant file, this can be created using this command - vagrant init bento/rockylinux-9.6 -- box version 202510.26.0
 	of course the type of Linux etc will change depending on the OS your using
 
 commonly used commands
@@ -25,7 +25,7 @@ config.vm.provision "shell", inline: <<SHELL
 	apt-get instally -y apache2
 SHELL
 
-tells the VM we spin up to install apache and load it we can check its running with 
+tells the VM we spin up to install apache and load it we can check its running with
 vagrant ssh
 ssytemctl status apache2 - if its running itll say active(running) in green
 
@@ -55,7 +55,7 @@ session 5
 
 learning how to create and run websites using Docker on an ubunutu 22.04
 
-shows the commands for running apache inside of a docker container 
+shows the commands for running apache inside of a docker container
 
 docker build -t my-apache (this builds the apache for the webpage inside of docker)
 
@@ -65,7 +65,7 @@ ducker run -d -p 8081:80 --name apache-1 my-apache -- commands that runs the apa
 session 7
 
 OpenNMS is the worlds first enterprise and service provider grade service platform that was created using the open source model. It was first published over 20 years ago. It is used for the following purposes
-- service providers 
+- service providers
 - large enterprises - primary network monitoring platform
 - small enterprises - reduces IT teams overhead - allows effective monitoring of networks and services
 - OEM Vendors - package OpenNMS as an IP mediation layer within their own Network or Element management solution set
@@ -75,4 +75,25 @@ there is the Meridian and Horizon distributions of OpenNMS
 
 horizon - cutting edge, fast moving distribution of OpenNMS - a new version is released every 3 - 6 months - contains latest tools but no guarantee of backwards compatibility
 
-meridian - hardened long term support version of OpenNMS - a new release annually. Each release is supported for three years post release for bug fixes and security patches. They don't require updating over the 3 year lifespan - more suitable for a production environment  
+meridian - hardened long term support version of OpenNMS - a new release annually. Each release is supported for three years post release for bug fixes and security patches. They don't require updating over the 3 year lifespan - more suitable for a production environment
+
+session 8 -  Kubernetes
+
+usually deployed across multiple VM's with one or more control nodes and a cluster of work nodes
+
+control plane - manages the overall cluster state scheduling decisions and API requests - includes components like API server, etcd (Key value store), Scheduler, and Controller Managers
+
+worker nodes - physical or Virtual machines that run the application containers - each node runes a kubelet (node agent), a container runtime (containerd or CRI-O), and kube-proxy for networking
+
+if you select show Kubernetes and then run docker ps it will showing the running Kubernetes containers and then your own project 
+
+pod - the smallest deployable unit in Kubernetes, holds on or more tightly coupled contaienr sharing storage and network resources
+service - an abstraction that defined a logical set of Pods and a stable way to expose them via a single IP address or DNS name
+deploymnet - declarative resource that manages ReplicaSets to handle automated rollouts, rollbakcs and scaling of application replicas
+declarative model - define the desired state of the application in config files (YAML typically) and kubernetes continously reconciles the actual state to match it
+
+PRIMARY BENEFITS
+self healing - auto restarts failed containers, replaces unhealthly nodes and reschedules pods
+autoscaling - horizontally scales application replicas up or down based on CPU, memory or custom metrics
+load balancing & service discovery - auto distributes network traffic across healthy pods
+portability - Runs consistently across on-premises servers, hybrid set ups and public clouds (AWS, Google Cloud, and Azure)
